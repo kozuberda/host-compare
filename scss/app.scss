@@ -10,21 +10,21 @@
 @include foundation-forms;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-@include foundation-accordion;
-@include foundation-accordion-menu;
-@include foundation-badge;
-@include foundation-breadcrumbs;
-@include foundation-button-group;
-@include foundation-callout;
-@include foundation-close-button;
-@include foundation-drilldown-menu;
-@include foundation-dropdown;
-@include foundation-dropdown-menu;
+// @include foundation-accordion;
+// @include foundation-accordion-menu;
+// @include foundation-badge;
+// @include foundation-breadcrumbs;
+// @include foundation-button-group;
+// @include foundation-callout;
+// @include foundation-close-button;
+// @include foundation-drilldown-menu;
+// @include foundation-dropdown;
+// @include foundation-dropdown-menu;
 @include foundation-flex-video;
 @include foundation-label;
 @include foundation-media-object;
 @include foundation-menu;
-@include foundation-off-canvas;
+// @include foundation-off-canvas;
 @include foundation-orbit;
 @include foundation-pagination;
 @include foundation-progress-bar;
@@ -39,15 +39,406 @@
 @include foundation-tooltip;
 @include foundation-top-bar;
 
+$dark: #232d3d;
 
 /* Menu */
 
 .top-bar {
-	ul {
-		li {
-			a {
+	line-height: 80px;
+	.menu {
 
+		> li {
+			> a {
+				line-height: 80px;
+				color: #7f8388;
+				font-size: 12px;
+				font-family: $header-font-family;
+				&:hover {
+					color: $white;
+				}
+				&:active {
+					color: $primary-color;
+				}
 			}
 		}
 	}
 }
+
+buttun,
+[type="submit"],
+.button {
+	@include button;
+	line-height: 40px;
+	min-height: 40px;
+	box-shadow: 0 3px 0 darken($primary-color, 20%);
+	&.success {
+		box-shadow: 0 3px 0 darken($success-color, 20%);
+	}
+
+}
+
+
+@include breakpoint(medium) {
+	.float-left-medium {
+		float: left;
+	}
+}
+
+
+
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
+select {
+	@include form-element;
+	font-weight: 700;
+	line-height: 50px;
+	height: 50px;
+	padding: 0 20px;
+}
+
+
+//ba-host-cloud//
+
+.ba-host-cloud {
+	background: $primary-color;
+	position: relative;
+	padding: 33px 0 35px 0;
+	border-top: 9px solid darken($primary-color, 10%);
+	border-bottom: 31px solid #ff742c;;
+	text-align: center;
+	h2 {
+		text-align: center;
+		font-weight: 300;
+		color: $white;
+	}
+	.forms {
+		margin-top: 53px;
+
+	}
+
+	select {
+		max-width: 300px;
+		margin-bottom: 21px;
+	}
+	@include breakpoint(medim only) {
+		.forms {
+			text-align: center;
+		}
+	}
+
+	.ba-select-one {
+		position: relative;
+		&:before {
+			content: "";
+			width: 50px;
+			height: 50px;
+			background: $secondary-color;
+			border-radius: 3px;
+			position: absolute;
+			display: block;
+			right: 0;
+		}
+		&:after {
+			content: "";
+			width: 15px;
+			height: 10px;
+			background-image: url('../img/arrow-select.svg') ;
+			position: absolute;
+			display: block;
+			top: 20px;
+			right: 18px;
+		}
+
+	}
+	.ba-chart:before {
+
+			content: "";
+			width: 19px;
+			height: 19px;
+			display: block;
+			background-image: url('../img/chart.svg');
+			position: absolute;
+			z-index: 10;
+	}
+
+
+	.ba-select-two {
+		position: relative;
+		background: url('../img/chart.svg') no-repeat 22px 50%;
+		&:before {
+			content: "";
+			width: 50px;
+			height: 50px;
+			background: $secondary-color;
+			border-radius: 3px;
+			position: absolute;
+			display: block;
+			left:250px;
+			z-index: 1;
+		}
+		&:after {
+			content: "";
+			width: 15px;
+			height: 10px;
+			background-image: url('../img/arrow-select.svg');
+			position: absolute;
+			display: block;
+			top: 20px;
+			left: 270px;
+			z-index: 2;
+		}
+
+	}
+
+	.ba-icloud {
+		position: relative;
+		&:before {
+			content: "";
+			width: 19px;
+			height: 19px;
+			display: block;
+			background-image: url('../img/icloud.svg');
+			position: absolute;
+			top: 0;
+			z-index: 5;
+		}
+	}
+
+
+	.large {
+		padding-left: 60px;
+		padding-right: 60px;
+		padding-top: 12px;
+		min-height: 65px;
+		margin:0 auto;
+		background: $secondary-color;
+		box-shadow: 0 3px 0 darken($secondary-color, 20%);
+		&:hover {
+			background: darken($secondary-color, 10%);
+		}
+
+	}
+
+}
+
+
+.ba-communication{
+	position: absolute;
+	top:20%;
+	left: 2%;
+	.button {
+		background: darken($secondary-color, 10%);
+		box-shadow: none;
+		border-radius: none;
+		padding: 10px 20px;
+
+		&:hover {
+			background: $secondary-color;
+		}
+		img {
+			height: 30px;
+			width: 26px;
+		}
+	}
+	@include breakpoint(small only) {
+		.button {
+			padding: 0 10px;
+		}
+	}
+}
+
+@import "slick.scss";
+.ba-slider {
+	.ba-slide{
+		position: relative;
+		outline: none;
+		& img {
+			margin: 0 auto;
+			max-width: 100%;
+				height: auto;
+		}
+	}
+	.slick-arrow {
+		width: 61px;
+		height: 77px;
+		border: none;
+		background: no-repeat 50%;
+		text-indent: -99999px;
+		outline: none;
+		position: absolute;
+		top: 50%;
+		z-index: 2;
+		&:focus,
+		&:active,
+		{
+			width: 61px;
+			height: 77px;
+		}
+	}
+	.slick-prev{
+		background-image: url('../img/arrow-left.svg');
+		left: 10%;
+	}
+	.slick-next{
+		background-image: url('../img/arrow-right.svg');
+		right: 10%;
+	}
+}
+
+
+
+//ba-about-us//
+
+.ba-about-us {
+	padding: 55px 0 75px 0;
+	h4 {
+		color: $black;
+	}
+	.ba-main-content {
+		color: $primary-color;
+	}
+
+}
+
+
+//ba-browser//
+
+.ba-browser {
+	background: linear-gradient(to top, $secondary-color 70%, $white 20%);
+	padding-bottom: 135px;
+	text-align: center;
+
+	@include breakpoint(small only) {
+		padding-bottom: 40px;
+	}
+
+	.ba-browser-slaider{
+		text-align: center;
+		.ba-browser-slaide{
+			border: none;
+			outline: none;
+			img {
+				max-width: 100%;
+				height: auto;
+
+			}
+		}
+		.slick-dots {
+			list-style: none;
+			padding: 0;
+			margin-top: 20px;
+			li {
+				display: inline-block;
+				margin-left: 19px;
+			}
+			li:first-child {
+				margin-left: 0;
+			}
+			button {
+				width: 12px;
+				min-height: 12px;
+				line-height: 12px;
+				text-indent: -9999px;
+				background: darken($secondary-color, 10%);
+				padding: 0;
+				border: none;
+				box-shadow: none;
+				border-radius: 6px;
+				display: block;
+				&:focus, &:hover {
+					background: lighten($secondary-color, 10%);
+					outline:none;
+				}
+			}
+			.slick-active {
+				button {
+					background: lighten($secondary-color, 10%);
+				}
+			}
+
+		}
+	}
+}
+
+
+
+//ba-footer//
+
+.ba-footer {
+	background: #151c27;
+	border-top: 10px solid #0d131a;
+	padding: 45px 0 416px;
+	@include breakpoint(small only) {
+		padding-bottom: 70px;
+	}
+	.ba-footer__text {
+		margin: 20px 0 25px;
+		color:  #4c5c74;
+	}
+	.ba-footer__input {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		border-radius: 4px;
+		background: #080c11 url('../img/email.svg') no-repeat 95% 50%;
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 25px;
+		&:focus {
+			background: lighten(#080c11, 20%) url('../img/email.svg') no-repeat 95% 50%;
+		}
+
+	}
+
+
+
+	.ba-footer__icon {
+		margin-top: 50px;
+		padding-left: 70px;
+		@include breakpoint(small only) {
+			padding-left: 5px;
+		}
+
+		a {
+			padding: 7px 15px;
+			margin: 0 5px;
+			img {
+				height: 27px;
+				width: 27px;
+			}
+
+		}
+		.icon-orange {
+			background-color:  #ffaa16;
+			box-shadow: 0 3px 0 darken(#ffaa16, 20%);
+			&:hover {
+				background: darken(#ffaa16, 10%);
+			}
+
+		}
+		.icon-pink {
+			background-color:  #ec5b95;
+			box-shadow: 0 3px 0 darken(#ec5b95, 20%);
+			&:hover {
+				background: darken(#ec5b95, 10%);
+			}
+
+		}
+		.icon-light-blue {
+			background-color:  #00aeef;
+			box-shadow: 0 3px 0 darken(#00aeef, 20%);
+			&:hover {
+				background: darken(#00aeef, 10%);
+			}
+		}
+		.icon-blue {
+			background-color:  #0054a6;
+			box-shadow: 0 3px 0 darken(#0054a6, 20%);
+			&:hover {
+				background: darken(#0054a6, 10%);
+			}
+		}
+
+	}
+}
+
+
