@@ -114,11 +114,14 @@ select {
 	.forms {
 		margin-top: 53px;
 
+
 	}
+
 
 	select {
 		max-width: 300px;
 		margin-bottom: 21px;
+		padding-left: 70px;
 	}
 	@include breakpoint(medim only) {
 		.forms {
@@ -150,21 +153,13 @@ select {
 		}
 
 	}
-	.ba-chart:before {
-
-			content: "";
-			width: 19px;
-			height: 19px;
-			display: block;
-			background-image: url('../img/chart.svg');
-			position: absolute;
-			z-index: 10;
+	.ba-chart {
+		background: #fff url('../img/chart.svg')  no-repeat 10%;
 	}
 
 
 	.ba-select-two {
 		position: relative;
-		background: url('../img/chart.svg') no-repeat 22px 50%;
 		&:before {
 			content: "";
 			width: 50px;
@@ -191,17 +186,7 @@ select {
 	}
 
 	.ba-icloud {
-		position: relative;
-		&:before {
-			content: "";
-			width: 19px;
-			height: 19px;
-			display: block;
-			background-image: url('../img/icloud.svg');
-			position: absolute;
-			top: 0;
-			z-index: 5;
-		}
+		background: #fff url('../img/icloud.svg')  no-repeat 10%;
 	}
 
 
@@ -271,8 +256,7 @@ select {
 		&:focus,
 		&:active,
 		{
-			width: 61px;
-			height: 77px;
+			opacity: 0.3;
 		}
 	}
 	.slick-prev{
@@ -314,12 +298,14 @@ select {
 
 	.ba-browser-slaider{
 		text-align: center;
+		transform: translateY(-27px);
 		.ba-browser-slaide{
 			border: none;
 			outline: none;
 			img {
 				max-width: 100%;
 				height: auto;
+
 
 			}
 		}

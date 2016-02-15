@@ -3825,6 +3825,7 @@ select:focus {
 .ba-host-cloud select {
   max-width: 300px;
   margin-bottom: 21px;
+  padding-left: 70px;
 }
 
 .ba-host-cloud .forms {
@@ -3857,19 +3858,12 @@ select:focus {
   right: 18px;
 }
 
-.ba-host-cloud .ba-chart:before {
-  content: "";
-  width: 19px;
-  height: 19px;
-  display: block;
-  background-image: url("../img/chart.svg");
-  position: absolute;
-  z-index: 10;
+.ba-host-cloud .ba-chart {
+  background: #fff url("../img/chart.svg") no-repeat 10%;
 }
 
 .ba-host-cloud .ba-select-two {
   position: relative;
-  background: url("../img/chart.svg") no-repeat 22px 50%;
 }
 
 .ba-host-cloud .ba-select-two:before {
@@ -3897,18 +3891,7 @@ select:focus {
 }
 
 .ba-host-cloud .ba-icloud {
-  position: relative;
-}
-
-.ba-host-cloud .ba-icloud:before {
-  content: "";
-  width: 19px;
-  height: 19px;
-  display: block;
-  background-image: url("../img/icloud.svg");
-  position: absolute;
-  top: 0;
-  z-index: 5;
+  background: #fff url("../img/icloud.svg") no-repeat 10%;
 }
 
 .ba-host-cloud .large {
@@ -4077,8 +4060,7 @@ select:focus {
 }
 
 .ba-slider .slick-arrow:focus, .ba-slider .slick-arrow:active {
-  width: 61px;
-  height: 77px;
+  opacity: 0.3;
 }
 
 .ba-slider .slick-prev {
@@ -4117,6 +4099,9 @@ select:focus {
 
 .ba-browser .ba-browser-slaider {
   text-align: center;
+  -webkit-transform: translateY(-27px);
+      -ms-transform: translateY(-27px);
+          transform: translateY(-27px);
 }
 
 .ba-browser .ba-browser-slaider .ba-browser-slaide {
